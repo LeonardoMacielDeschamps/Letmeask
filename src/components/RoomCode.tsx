@@ -6,10 +6,10 @@ type RoomCodeProps = {
   code: string | undefined;
 };
 
-export function RoomCode(props: RoomCodeProps) {
+export function RoomCode({ code }: RoomCodeProps) {
   function copyRoomCodeToClipboard() {
-    if (props.code) {
-      navigator.clipboard.writeText(props.code);
+    if (code) {
+      navigator.clipboard.writeText(code);
     }
   }
 
@@ -18,7 +18,7 @@ export function RoomCode(props: RoomCodeProps) {
       <div>
         <img src={copyImg} alt="Copy room code" />
       </div>
-      <span>Sala #{props.code}</span>
+      <span>Sala #{code}</span>
     </button>
   );
 }
